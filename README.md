@@ -31,4 +31,11 @@ conda install -c conda-forge matplotlib
 * [Salinas-A](http://www.ehu.eus/ccwintco/index.php/Hyperspectral_Remote_Sensing_Scenes#Salinas-A_scene)
 
 ## How to Run
+1. Git clone or download this code 
+2. Run `init.m` to create required folders like `dataset`, `results`, `tensorDataset`.
+3. Download dataset(s) from the above provided links into the `dataset` folder.
+4. In `runDataset.m` set below variables according to the dataset you are using. For example if you are running it for IndianPines dataset:
+  * `datasetFname = 'dataset/Indian_pines_corrected.mat'`
+  * `datasetGt = 'dataset/Indian_pines_gt.mat'`
+  * `outFile= 'IndianPines'`
 
