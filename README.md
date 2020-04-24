@@ -54,4 +54,20 @@ conda install -c conda-forge matplotlib
 ```
     dataPath = '../tensorDataset/IndianPines/'
 ```
-After running the `orion.py` file, it will generate results(figures and .mat files) in `results/orion/8020/IndianPines/`. Path of the result depends on the dataset being used and train-test split(in above example testSize was `0.2`.)
+After running the `orion.py` file, it will generate results(figures and .mat files) in `results/orion/8020/IndianPines/`. Path of the result depends on the dataset being used and train-test split(in above example testSize was `0.2`, so 80-20 split).
+6. We have also provided the code for baselines used in our paper, to run Linear, Polynomial and RBF SVM set follwing variables in `baselines.py` and to run Multi Layer perceptron set the same following variables in `mlpBaseline.py` file:
+```
+   dataX = loadmat('../dataset/Indian_pines_corrected.mat')
+   dataY = loadmat('../dataset/Indian_pines_gt.mat')
+   Xog = dataX['indian_pines_corrected'] # 3D object
+   Y2d = dataY['indian_pines_gt']        # 2D object
+   folderName = 'IndianPines' # Make sure this is correct. Result folders will be created based on this.
+   
+   # number of runs
+   runs = 10
+   
+   testSize = 0.2   
+```
+7.(Optional) Our code uses `GridSearchCV` from `sklearn` for hyperparameter tuning, to make it run faster(in parallel) you can set `njobs` variable in trainModelSVM and trainNN in `models.py` according to your system configuration. For details refer to this [link](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+
+Above instructions to set variables is for IndianPines dataset, to use any other dataset follow instructions 3-6 and set the variables accordingly.
