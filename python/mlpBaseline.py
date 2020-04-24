@@ -15,7 +15,7 @@ Xog = dataX['indian_pines_corrected'] # 3D object
 Y2d = dataY['indian_pines_gt']        # 2D object
 folderName = 'IndianPines' # Make sure this is correct. Result folders will be created based on this.
 
-runs = 2
+runs = 10
 testSize = 0.2
 
 # For Creating specific split folders, so that different splits don't overwrite the results.

@@ -11,7 +11,7 @@ import os
 from models import *
 
 # Change the datapath here
-dataPath = '../tensorDataset/IndianPines/'
+dataPath = '../tensorDataset/8020/IndainPines/'
 
 folderName = dataPath.split('/')[-2]
 if folderName == '' or folderName == 'tensorDataset':

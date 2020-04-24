@@ -16,7 +16,7 @@ Y2d = dataY['indian_pines_gt']        # 2D object
 folderName = 'IndianPines' # Make sure this is correct. Result folders will be created based on this.
 
 # number of runs
-runs = 2
+runs = 10
 # train and test split - if you want to use 80-20 split(80% training and 20% testing),
 # assign testSize=0.2, if you want 30-70 split(30% training and 70% tesing) assign testSize=0.7
 testSize = 0.2

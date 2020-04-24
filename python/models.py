@@ -11,9 +11,9 @@ def trainModelSVM(trainX, trainY, kernel, decisionFunction, randomState=None):
     degrees = [2, 3, 4, 5]
     folds = 5
     # For testing
-    Cs = [1, 10]
-    gammas  = [0.1, 1]
-    degrees = [2, 3]
+    # Cs = [1, 10]
+    # gammas  = [0.1, 1]
+    # degrees = [2, 3]
     # set njobs for running hyperparameter tuining in parallel. Depends on number of available cpus on the system
     njobs = 4
     scoring = 'f1_weighted'
@@ -53,13 +53,13 @@ def trainNN(trainX, trainY):
         'learning_rate_init': [0.0001, 0.001, 0.01]}
 
     # For testing
-    param_grid = {
-        'hidden_layer_sizes': [(50,100,50)],
-        #'activation': ['tanh', 'relu'],
-        # 'solver': ['sgd', 'adam'],
-        'alpha': [0.01],
-        'learning_rate': ['constant'],
-        'learning_rate_init': [0.01]}
+    # param_grid = {
+    #     'hidden_layer_sizes': [(50,100,50)],
+    #     #'activation': ['tanh', 'relu'],
+    #     # 'solver': ['sgd', 'adam'],
+    #     'alpha': [0.01],
+    #     'learning_rate': ['constant'],
+    #     'learning_rate_init': [0.01]}
 
     mpl = MLPClassifier(max_iter=500, activation='relu', solver='adam', verbose=True)
     model = GridSearchCV(mpl, param_grid, scoring=scoring, n_jobs=njobs, cv=folds, verbose=3)
