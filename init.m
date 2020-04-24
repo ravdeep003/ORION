@@ -5,13 +5,13 @@ results = 'results';
 tensor = 'tensorDataset';
 if ~exist(dataset, 'dir')
     disp(dataset);
-    mkdir(convertStringsToChars(folderPath));
+    mkdir(convertStringsToChars(dataset));
 end
 if ~exist(results, 'dir')
     disp(results);
-    mkdir(convertStringsToChars(folderPath));
+    mkdir(convertStringsToChars(results));
 end
 if ~exist(tensor, 'dir')
     disp(tensor);
-    mkdir(convertStringsToChars(folderPath));
+    mkdir(convertStringsToChars(tensor));
 end
