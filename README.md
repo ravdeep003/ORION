@@ -49,10 +49,10 @@ conda install -c conda-forge matplotlib
       % Tensor decompostion rank
       ranks = [1000, 2000]
    ```
-   After running `runDataset.m` using Matlab, it will create .mat files in `tensorDataset/IndianPines` folder if `outFile` variable was set accordingly.  
+   After running `runDataset.m` using Matlab, it will create .mat files in `tensorDataset/8020/IndianPines` based on `outFile` and `testSize` variable (in above example testSize was `0.2`, so 80-20 split).
 5. Now to run `ORION` method, navigate to python folder and set following variables in `orion.py` file.
 ```
-    dataPath = '../tensorDataset/IndianPines/'
+    dataPath = '../tensorDataset/8020/IndianPines/'
 ```
 After running the `orion.py` file, it will generate results(figures and .mat files) in `results/orion/8020/IndianPines/`. Path of the result depends on the dataset being used and train-test split(in above example testSize was `0.2`, so 80-20 split).
 
