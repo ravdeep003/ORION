@@ -32,12 +32,26 @@ conda install -c conda-forge matplotlib
 
 ## How to Run
 1. Git clone or download this code 
-2. Run `init.m` to create required folders like `dataset`, `results`, `tensorDataset`.
+2. Run `init.m` in matlab to create required folders like `dataset`, `results`, `tensorDataset`.
 3. Download dataset(s) from the above provided links into the `dataset` folder.
 4. In `runDataset.m` set below variables according to the dataset you are using. For example if you are running it for **IndianPines** dataset:
    ```
       datasetFname = 'dataset/Indian_pines_corrected.mat'
       datasetGt = 'dataset/Indian_pines_gt.mat'
       outFile= 'IndianPines'
+      % IMPORTANT: Change X and Y according to variable stored in the .mat(dataset) file
+      X = data.indian_pines_corrected;
+      Y = gt. indian_pines_gt;
+      
+      testSize = 0.2
+      % Number of datasets to be created
+      numData = 10
+      % Tensor decompostion rank
+      ranks = [1000, 2000]
    ```
-
+   After running `runDataset.m` using Matlab, it will create .mat files in `tensorDataset/IndianPines` folder if `outFile` variable was set accordingly.  
+5. Now to run `ORION` method, navigate to python folder and set following variables in `orion.py` file.
+```
+    dataPath = '../tensorDataset/IndianPines/'
+```
+After running the `orion.py` file, it will generate results(figures and .mat files) in `results/orion/8020/IndianPines/`. Path of the result depends on the dataset being used and train-test split(in above example testSize was `0.2`.)
