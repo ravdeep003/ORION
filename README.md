@@ -12,7 +12,7 @@ Download Tensor and Poblano Toolbox and add it to Matlab Path
 * Sklearn
 * Numpy
 * Matplotlib
-* Tensorly(http://tensorly.org/stable/index.html)
+* [Tensorly](http://tensorly.org/stable/index.html)
 
 ## Datasets
 * 
