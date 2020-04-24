@@ -55,6 +55,7 @@ conda install -c conda-forge matplotlib
     dataPath = '../tensorDataset/IndianPines/'
 ```
 After running the `orion.py` file, it will generate results(figures and .mat files) in `results/orion/8020/IndianPines/`. Path of the result depends on the dataset being used and train-test split(in above example testSize was `0.2`, so 80-20 split).
+
 6. We have also provided the code for baselines used in our paper, to run Linear, Polynomial and RBF SVM set follwing variables in `baselines.py` and to run Multi Layer perceptron set the same following variables in `mlpBaseline.py` file:
 ```
    dataX = loadmat('../dataset/Indian_pines_corrected.mat')
