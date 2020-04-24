@@ -35,6 +35,6 @@ lambda = M.lambda;
 %data = khatrirao(A,B);
 timeNow = int32(posixtime(datetime('now', 'TimeZone', 'America/Los_Angeles')));
 fname = strcat(outputFile, '_', num2str(rank), '_', num2str(timeNow), '.mat');
-save(fname, 'A', 'B', 'C', 'lambda', 'Y', 'testI', 'testJ', 'trainI', 'trainJ', 'err', 'rmse', 'rank');
+save(fname, 'A', 'B', 'C', 'lambda', 'Y', 'testI', 'testJ', 'trainI', 'trainJ', 'err', 'rmse', 'rank', 'testSize');
 end
 
